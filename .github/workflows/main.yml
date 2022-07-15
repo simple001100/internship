@@ -1,0 +1,17 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: fd8a1d05-453f-4d77-a079-8223661ec7a4
+          heroku_app_name: "digitalmarket2" #Must be unique in Heroku
+          heroku_email: "sarsymbaef@yandex.by"
